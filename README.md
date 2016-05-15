@@ -1,2 +1,1 @@
-# cli_training
-Repo for Command-Line Training 
+# Repo for Command-Line Training 
