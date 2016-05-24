@@ -242,8 +242,8 @@ When creating a new file, by default the file has `-rw-r--r--` permission (read+
 
     !bash
     ls -al
-    chmod u +x newfile.txt # add execute permission to author
-    chmod u -xr newfile.txt # remove both write and execute permission from author, now try to open this file?
+    chmod u+x newfile.txt # add execute permission to author
+    chmod u-xr newfile.txt # remove both write and execute permission from author, now try to open this file?
 
 `u`: Owner; `g`: Group; `a`: All Users
 
@@ -261,10 +261,10 @@ When creating a new file, by default the file has `-rw-r--r--` permission (read+
     cd / # do something in root directory
     sudo touch newfile.txt
     ls -al newfile.txt
-    chmod a+w newfile.txt
-    sudo chmod a+w newfile.txt
+    chmod a+x newfile.txt
+    sudo chmod a+x newfile.txt
 
-**Exercise**: make your "newfile.txt" with the permission of `-rwxrw-r--`
+**Exercise**: make your "newfile.txt" in home directory with the permission of `-rwxrw-r--`
 
 ---
 # .bashrc and Environment Variables
@@ -382,7 +382,7 @@ Clone [cli_training](https://github.com/danningc/cli_training) into Github folde
 
     !bash
     cd ~/Github
-    git clone git@github.com:civisanalytics/cli_training.git
+    git clone git@github.com:danningc/cli_training.git
     cd cli_training
     ls
     git status
@@ -438,6 +438,7 @@ Each **commit** stands for a snapshot of your current database. The commits are 
     git commit -m "add newfile.txt" # type in commit message
 
 What if you want to edit existing file:
+
     !bash
     vim newfile.txt
     git diff
@@ -560,8 +561,8 @@ Submit a **Pull Request** on the [website](https://github.com/danningc/cli_train
 
     git checkout master
     vim README.md # "heart-glasses" don't exist here
-    git checkout -b cowboy-hat # # start a new branch called heart-glasses based on master
-    touch what_do_i_wear.txt # add "cowboy-hat" there
+    git checkout -b cowboy-hat # start a new branch called heart-glasses based on master
+    touch what_do_i_wear.txt # create an empty new file
     git add what_do_i_wear.txt
     git commit -m 'wear cowboy-hat'
     git push origin cowboy-hat
@@ -606,7 +607,7 @@ you want to incorporate them while still working on your branch
 **Command Examples:** when you are editing the same line of code as your collaborator
 
     !bash
-      git checkout master
+      git checkout heart-glasses
       vim what_do_i_wear.txt #edit line 2 to "heart glasses"
       git add what_do_i_wear.txt
       git commit -m 'wear heart glasses'
@@ -615,7 +616,7 @@ you want to incorporate them while still working on your branch
 Another person create a branch based on **master**, called **cowboy-hat**
 
     !bash
-      git checkout -b cowboy-hat
+      git checkout cowboy-hat
       vim what_do_i_wear.txt #edit line 2 to "cowboy hat"
       git add what_do_i_wear.txt
       git commit -m 'wear cowboy hat'
@@ -623,7 +624,7 @@ Another person create a branch based on **master**, called **cowboy-hat**
 What happens if you want to merge these two branches together?
 
     !bash
-      git merge heart-glasses # merge heart-glasses onto this branch
+      git merge heart-glasses # merge heart-glasses onto cowboy-hat branch
 
 ---
 # Do Not Panic
@@ -685,7 +686,7 @@ What happens if you want to merge these two branches together?
 * Don't commit sensitive information (e.g. your passwords, API key, etc)
 * Be cautious with big files (e.g. big jupyter notebooks, data, etc)
 
-To prevent committing unwanted files, create a .gitignore file in your repo. For example, see [cli_training/.gitignore](https://github.com/civisanalytics/cli_training/blob/master/.gitignore)
+To prevent committing unwanted files, create a .gitignore file in your repo. For example, see [cli_training/.gitignore](https://github.com/danningc/cli_training/blob/master/.gitignore)
 
 **Commit early, commit often, commit meaningfully**
 
@@ -693,9 +694,8 @@ To prevent committing unwanted files, create a .gitignore file in your repo. For
   * Meaningful commit message/branch names help yourself and others understand what's been done
 
 ---
-## Exercise: make a pull request to danningc/cli_training and tag @danningc for review
-
-Before that, you will need to tell me your account so i can add you as a collaborator.
+## Exercise:
+Make a pull request to danningc/cli_training and tag @danningc for review. Before that, you will need to tell me your account so i can add you as a collaborator.
 
 ## For your efficiency:
 
