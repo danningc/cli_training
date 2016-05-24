@@ -1686,7 +1686,7 @@ div.slide div.presenter_notes {
 </ul>
 <p><strong>Let us know your feedback</strong></p>
 <p>Email <a href="dchen@civisanalytics.com">me</a></p>
-<p><strong>Everything can be found in Github</strong>
+<p><strong>Everything can be found in</strong>
 <a href="https://github.com/danningc/cli_training">Github Repo: danning/cli_training</a>
 (Please file issues if you find any)</p>
 <p class="notes">we try to make this training session as hands-on as possible, but it's also possible that people come in with different levels of familiarity with command line tools. Hard to tailor. But we would like to hear from you if you happen to have the chance to use some command line tools for your work (or life), so we will know what is more practical and useful for people.</p></section>
@@ -1751,6 +1751,7 @@ div.slide div.presenter_notes {
 <ul>
 <li>Get familiar with your Terminal program</li>
 <li>Use Bash commands to navigate your file system</li>
+<li>Get a sense of permissioning</li>
 <li>Set up .bashrc and understand environment variables</li>
 </ul>
 <p class="notes">In this module, all the actions will happen in a terminal. You can choose between Mac's default terminal "Terminal" or "iTerm" if that is installed on your machine. If you are using windows, find cygwin. Both applications provide similar functionality interfacing the operating systems. My personal preference is iTerm because it's highly configurable, open-sourced and being actively developed by the community.</p></section>
@@ -1828,7 +1829,7 @@ div.slide div.presenter_notes {
             <section><p><strong>On a UNIX system, everything is a file; if something is not a file, it is a process</strong></p>
 <ul>
 <li><code>pwd</code> (print working directory): prints what directory you are in</li>
-<li><code>cd</code> (change directory): move around</li>
+<li><code>cd</code> (change directory): moves you around</li>
 <li><code>ls</code> (list): prints objects (files and/or subdirectories)</li>
 </ul></section>
             
@@ -1861,15 +1862,15 @@ div.slide div.presenter_notes {
             
             
             <section><p><strong>Example commands</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> ~ <span class="c"># home directory</span>
-<span class="lineno">2 </span><span class="nb">pwd</span> <span class="c"># view where you are</span>
-<span class="lineno">3 </span>ls  <span class="c"># view files and directories under your current one</span>
-<span class="lineno">4 </span><span class="nb">cd</span> .. <span class="c"># up one directory</span>
-<span class="lineno">5 </span><span class="nb">cd</span> . <span class="c"># current directory</span>
-<span class="lineno">6 </span><span class="nb">cd</span> /Users/danning/Downloads/ <span class="c"># to specified directory</span>
-<span class="lineno">7 </span><span class="nb">cd</span> - <span class="c"># return to where you were one step before</span>
-<span class="lineno">8 </span><span class="nb">cd</span> ~/Downloads <span class="c"># use ~ to substitute /Users/dchen/</span>
-<span class="lineno">9 </span><span class="nb">cd</span> <span class="nv">$HOME</span> <span class="c"># another way to go home :)</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> ~ <span class="c1"># home directory</span>
+<span class="lineno">2 </span><span class="nb">pwd</span> <span class="c1"># view where you are</span>
+<span class="lineno">3 </span>ls  <span class="c1"># view files and directories under your current one</span>
+<span class="lineno">4 </span><span class="nb">cd</span> .. <span class="c1"># up one directory</span>
+<span class="lineno">5 </span><span class="nb">cd</span> . <span class="c1"># current directory</span>
+<span class="lineno">6 </span><span class="nb">cd</span> /Users/danning/Downloads/ <span class="c1"># to specified directory</span>
+<span class="lineno">7 </span><span class="nb">cd</span> - <span class="c1"># return to where you were one step before</span>
+<span class="lineno">8 </span><span class="nb">cd</span> ~/Downloads <span class="c1"># use ~ to substitute /Users/dchen/</span>
+<span class="lineno">9 </span><span class="nb">cd</span> <span class="nv">$HOME</span> <span class="c1"># another way to go home :)</span>
 </pre></div>
 </section>
             
@@ -1902,18 +1903,18 @@ div.slide div.presenter_notes {
             
             
             <section><ul>
+<li>Auto-complete:<ul>
+<li><code>Tab</code>: auto-complete command as you start typing the first couple of letters</li>
+</ul>
+</li>
 <li>Clear screen:<ul>
-<li>iTerm: <code>Cmd + R</code></li>
+<li>iTerm: <code>Ctrl + L</code> or <code>Cmd + R</code></li>
 <li>Terminal: <code>Ctrl + L</code> or <code>Cmd + L</code></li>
 </ul>
 </li>
 <li>Kill running process:<ul>
 <li><code>Ctrl + Z</code>: suspend the current foreground job (<code>bg</code> to make the command to execute in background)</li>
 <li><code>Ctrl + C</code>: interrupt the current running program</li>
-</ul>
-</li>
-<li>Auto-complete:<ul>
-<li><code>Tab</code>: auto-complete command as you start typing the first couple of letters</li>
 </ul>
 </li>
 </ul></section>
@@ -1949,14 +1950,14 @@ div.slide div.presenter_notes {
             <section><p>You can move files around using bash, creating and deleting files and directories (folders)</p>
 <ul>
 <li><code>touch</code>: create a new and empty file</li>
-<li><code>mkdir</code>: (make directory)</li>
+<li><code>mkdir</code>: (make directory) create a new directory</li>
 <li><code>cp</code>: (copy) file or directory</li>
 <li><code>mv</code>: (move) or rename file or directory</li>
 <li><code>rm</code> (remove) file or directory</li>
 </ul>
 <p><code>-r</code>: if the target is a directory, for example:</p>
 <ul>
-<li><code>cp -r directory/</code>: copy the whole targeted directory</li>
+<li><code>cp -r directory/ ~/Desktop/directory</code>: copy the whole targeted directory to the destination</li>
 </ul></section>
             
           </div>
@@ -1988,21 +1989,21 @@ div.slide div.presenter_notes {
             
             
             <section><p><strong>Exercise</strong></p>
-<div class="highlight"><pre><span class="lineno"> 1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>
-<span class="lineno"> 2 </span>touch newfile.txt <span class="c"># create an empty file</span>
-<span class="lineno"> 3 </span>mkdir directory <span class="c"># create an empty directory in home directory</span>
-<span class="lineno"> 4 </span>cp newfile.txt directory/newfile.txt <span class="c"># copy newfile to directory</span>
-<span class="lineno"> 5 </span>mv newfile.txt oldfile.txt <span class="c"># rename newfile.txt to oldfile.txt</span>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="nb">cd</span> ~
+<span class="lineno"> 2 </span>touch newfile.txt <span class="c1"># create an empty file</span>
+<span class="lineno"> 3 </span>mkdir directory <span class="c1"># create an empty directory in home directory</span>
+<span class="lineno"> 4 </span>cp newfile.txt directory/newfile.txt <span class="c1"># copy newfile to directory</span>
+<span class="lineno"> 5 </span>mv newfile.txt oldfile.txt <span class="c1"># rename newfile.txt to oldfile.txt</span>
 <span class="lineno"> 6 </span>ls
-<span class="lineno"> 7 </span>mv oldfile.txt directory/oldfile.txt <span class="c"># move oldfile.txt to directory with the same file name</span>
+<span class="lineno"> 7 </span>mv oldfile.txt directory/oldfile.txt <span class="c1"># move oldfile.txt to directory with the same file name</span>
 <span class="lineno"> 8 </span>ls
-<span class="lineno"> 9 </span><span class="nb">cd </span>directory
+<span class="lineno"> 9 </span><span class="nb">cd</span> directory
 <span class="lineno">10 </span>ls
-<span class="lineno">11 </span>rm newfile.txt <span class="c"># deletes a file</span>
-<span class="lineno">12 </span>mv oldfile.txt ../oldfile.txt <span class="c"># move oldfile.txt one level up</span>
-<span class="lineno">13 </span><span class="nb">cd</span> .. <span class="c"># back one level up</span>
+<span class="lineno">11 </span>rm newfile.txt <span class="c1"># deletes a file</span>
+<span class="lineno">12 </span>mv oldfile.txt ../oldfile.txt <span class="c1"># move oldfile.txt one level up</span>
+<span class="lineno">13 </span><span class="nb">cd</span> .. <span class="c1"># back one level up</span>
 <span class="lineno">14 </span>ls
-<span class="lineno">15 </span>rm -r directory <span class="c"># remove directory</span>
+<span class="lineno">15 </span>rm -r directory <span class="c1"># remove directory</span>
 </pre></div>
 </section>
             
@@ -2037,18 +2038,18 @@ div.slide div.presenter_notes {
             <section><p>You can create empty file with <code>touch filename</code>, and use your preferred text editors to edit and save. Alternatively,
 use Bash command or command line's default editor.</p>
 <h3>Approach 1: edit from GUI</h3>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>
 <span class="lineno">2 </span>touch newfile.txt
-<span class="lineno">3 </span>open . <span class="c"># then start editing on the file</span>
+<span class="lineno">3 </span>open . <span class="c1"># then start editing on the file</span>
 </pre></div>
 
 <h3>Approach 2: use <code>cat</code> to input content to a new file</h3>
-<div class="highlight"><pre><span class="lineno">1 </span>cat &gt; newfile.txt
-<span class="lineno">2 </span><span class="c"># stop inputting by Ctrl + C</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>cat &gt; newfile.txt
+<span class="lineno">2 </span><span class="c1"># stop inputting by Ctrl + C</span>
 </pre></div>
 
 <h3>Approach 3: use Bash's default editor</h3>
-<div class="highlight"><pre><span class="lineno">1 </span>vim newfile.txt <span class="c"># vim create a new file if it doesn&#39;t exist</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>vim newfile.txt <span class="c1"># vim creates a new file if it doesn&#39;t exist</span>
 </pre></div>
 </section>
             
@@ -2081,7 +2082,7 @@ use Bash command or command line's default editor.</p>
             
             
             <section><p><strong>Exercise</strong>: create a file called "newfile.txt", with any content, for example:</p>
-<div class="highlight"><pre><span class="lineno"> 1 </span>hello world,
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span>hello world,
 <span class="lineno"> 2 </span>i am a robot!
 <span class="lineno"> 3 </span>1
 <span class="lineno"> 4 </span>2
@@ -2175,15 +2176,16 @@ use Bash command or command line's default editor.</p>
 <li><code>.</code>: a dot in front of the file names indicating they are "hidden" files</li>
 </ul>
 <p class="notes">Bash commands often have options (typically flagged with -) that allow for differing functionality. You enter these options after the command, but before the argument (typically the file you are pointing the command at). Hidden files are not displayed by default, but you are not prevented from accessing them. They are usually used to store user preference or preserve the state of utility. We will talk about .bashrc file and credentials later, both saved as hidden files.</p>
-<div class="highlight"><pre><span class="lineno">1 </span>wc -l newfile.txt <span class="c"># only show number of lines</span>
-<span class="lineno">2 </span>head -n <span class="m">1</span> newfile.txt <span class="c"># only show first line</span>
-<span class="lineno">3 </span>ls -a <span class="c"># show hidden files/directories</span>
-<span class="lineno">4 </span>ls -l <span class="c"># l = long listing, detailed info about the objects</span>
-<span class="lineno">5 </span>ls -alh <span class="c"># combine both commands above, plus &quot;human readable format&quot;</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>wc -l newfile.txt <span class="c1"># only show number of lines</span>
+<span class="lineno">2 </span>head -n <span class="m">1</span> newfile.txt <span class="c1"># only show first line</span>
+<span class="lineno">3 </span>ls -a <span class="c1"># show hidden files/directories</span>
+<span class="lineno">4 </span>ls -l <span class="c1"># l = long listing, detailed info about the objects</span>
+<span class="lineno">5 </span>ls -alh <span class="c1"># combine both commands above, plus &quot;human readable format&quot;</span>
 </pre></div>
 
 <p><strong>Do not bother to remember the arguments</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span>man ls <span class="c"># display manual</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>man ls <span class="c1"># display manual</span>
+<span class="lineno">2 </span>man --help
 </pre></div>
 </section>
             
@@ -2216,17 +2218,17 @@ use Bash command or command line's default editor.</p>
             
             
             <section><p>Most of time, you operate in your home directory that you are allowed to mess up everything. What if you go beyond home directory?</p>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> / <span class="c"># move to root directory</span>
-<span class="lineno">2 </span>ls -alh <span class="c"># see the new user and usr group associated with each file/directory</span>
-<span class="lineno">3 </span>touch newfile.txt <span class="c"># permission denied</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> / <span class="c1"># move to root directory</span>
+<span class="lineno">2 </span>ls -alh <span class="c1"># see the new user and usr group associated with each file/directory</span>
+<span class="lineno">3 </span>touch newfile.txt <span class="c1"># permission denied</span>
 </pre></div>
 
 <p><code>sudo</code> (super user do): greater power comes with greater responsibility</p>
-<div class="highlight"><pre><span class="lineno">1 </span>sudo touch newfile.txt
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>sudo touch newfile.txt
 </pre></div>
 
 <p><strong>Ruining Everything Forever</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span>sudo rm -rf .*
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>sudo rm -rf .*
 </pre></div>
 
 <p>And this is real, you can <a href="http://www.independent.co.uk/life-style/gadgets-and-tech/news/man-accidentally-deletes-his-entire-company-with-one-line-of-bad-code-a6984256.html">destroy a company with this line of the code</a></p>
@@ -2262,9 +2264,9 @@ use Bash command or command line's default editor.</p>
             
             <section><p><strong>chmod</strong> is short for change mode, it's used with either letters or numbers to set the permissions.</p>
 <p>When creating a new file, by default the file has <code>-rw-r--r--</code> permission (read+write for owner, read-only for user group, read-only for everyone)</p>
-<div class="highlight"><pre><span class="lineno">1 </span>ls -al
-<span class="lineno">2 </span>chmod u +x newfile.txt <span class="c"># add execute permission to author</span>
-<span class="lineno">3 </span>chmod u -xr newfile.txt <span class="c"># remove both write and execute permission from author, now try to open this file?</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>ls -al
+<span class="lineno">2 </span>chmod u +x newfile.txt <span class="c1"># add execute permission to author</span>
+<span class="lineno">3 </span>chmod u -xr newfile.txt <span class="c1"># remove both write and execute permission from author, now try to open this file?</span>
 </pre></div>
 
 <p><code>u</code>: Owner; <code>g</code>: Group; <code>a</code>: All Users</p></section>
@@ -2297,14 +2299,14 @@ use Bash command or command line's default editor.</p>
             <header><h1>Permissions and Sudo: Change Permission</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1 </span><span class="c"># letter &lt;-&gt; number</span>
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># letter &lt;-&gt; number</span>
 <span class="lineno"> 2 </span>rwx rwx <span class="nv">rwx</span> <span class="o">=</span> <span class="m">111</span> <span class="m">111</span> <span class="nv">111</span> <span class="o">=</span> 777
 <span class="lineno"> 3 </span>rw- rw- rw- <span class="o">=</span> <span class="m">110</span> <span class="m">110</span> <span class="nv">110</span> <span class="o">=</span> 666
 <span class="lineno"> 4 </span>rwx --- --- <span class="o">=</span> <span class="m">111</span> <span class="m">000</span> <span class="nv">000</span> <span class="o">=</span> 700
 <span class="lineno"> 5 </span>
-<span class="lineno"> 6 </span>chmod <span class="m">700</span> newfile.txt <span class="c"># think of permission setting a series of bits</span>
-<span class="lineno"> 7 </span><span class="c"># if you don&#39;t have the permission</span>
-<span class="lineno"> 8 </span><span class="nb">cd</span> / <span class="c"># do something in root directory</span>
+<span class="lineno"> 6 </span>chmod <span class="m">700</span> newfile.txt <span class="c1"># think of permission setting a series of bits</span>
+<span class="lineno"> 7 </span><span class="c1"># if you don&#39;t have the permission</span>
+<span class="lineno"> 8 </span><span class="nb">cd</span> / <span class="c1"># do something in root directory</span>
 <span class="lineno"> 9 </span>sudo touch newfile.txt
 <span class="lineno">10 </span>ls -al newfile.txt
 <span class="lineno">11 </span>chmod a+w newfile.txt
@@ -2353,11 +2355,11 @@ use Bash command or command line's default editor.</p>
 </ul>
 <p class="notes">as you have seen previously when we navigated the file space, <code>.</code> in front of a file name means it's not going to be displayed by default.</p>
 <p><strong>environment variables</strong> are a set of dynamic named values that can affect the way running processes will behave on a computer</p>
-<div class="highlight"><pre><span class="lineno">1 </span>env
-<span class="lineno">2 </span><span class="nb">echo</span> <span class="nv">$HOME</span> <span class="c"># your home directory</span>
-<span class="lineno">3 </span><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="c"># a list of directories where executable programs are located</span>
-<span class="lineno">4 </span><span class="nb">echo</span> <span class="nv">$SHELL</span> <span class="c"># the shell program you are using in the terminal</span>
-<span class="lineno">5 </span><span class="nb">echo </span>1+1
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>env
+<span class="lineno">2 </span><span class="nb">echo</span> <span class="nv">$HOME</span> <span class="c1"># your home directory</span>
+<span class="lineno">3 </span><span class="nb">echo</span> <span class="nv">$PATH</span> <span class="c1"># a list of directories where executable programs are located</span>
+<span class="lineno">4 </span><span class="nb">echo</span> <span class="nv">$SHELL</span> <span class="c1"># the shell program you are using in the terminal</span>
+<span class="lineno">5 </span><span class="nb">echo</span> 1+1
 <span class="lineno">6 </span><span class="nb">echo</span> <span class="k">$((</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 </pre></div>
 
@@ -2392,14 +2394,14 @@ use Bash command or command line's default editor.</p>
             
             
             <section><h3>Temporary:</h3>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">echo</span> <span class="nv">$DATABASE_USER</span> <span class="c"># empty</span>
-<span class="lineno">2 </span><span class="nb">export </span><span class="nv">DATABASE_USER</span><span class="o">=</span><span class="s1">&#39;robot&#39;</span> <span class="c"># assign a value to the environment variable</span>
-<span class="lineno">3 </span><span class="nb">echo</span> <span class="nv">$DATABASE_USER</span> <span class="c"># robot</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">echo</span> <span class="nv">$DATABASE_USER</span> <span class="c1"># empty</span>
+<span class="lineno">2 </span><span class="nb">export</span> <span class="nv">DATABASE_USER</span><span class="o">=</span><span class="s1">&#39;robot&#39;</span> <span class="c1"># assign a value to the environment variable</span>
+<span class="lineno">3 </span><span class="nb">echo</span> <span class="nv">$DATABASE_USER</span> <span class="c1"># robot</span>
 </pre></div>
 
 <h3>Available for All Sessions:</h3>
-<div class="highlight"><pre><span class="lineno">1 </span>vim .bashrc <span class="c"># or any editor</span>
-<span class="lineno">2 </span><span class="nb">source</span> ~/.bashrc <span class="c"># get the update right away</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>vim .bashrc <span class="c1"># or any editor</span>
+<span class="lineno">2 </span><span class="nb">source</span> ~/.bashrc <span class="c1"># get the update right away</span>
 </pre></div>
 </section>
             
@@ -2540,7 +2542,7 @@ use Bash command or command line's default editor.</p>
 <li>Windows users: via Git Bash</li>
 </ul>
 <p>Quick peak:</p>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> ~/Github/cli_training
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> ~/Github/cli_training
 <span class="lineno">2 </span>git status
 </pre></div>
 </section>
@@ -2574,14 +2576,15 @@ use Bash command or command line's default editor.</p>
             
             
             <section><p><strong>Global config</strong>: tell your local Git who the user is</p>
-<div class="highlight"><pre><span class="lineno">1 </span>git config --global user.name <span class="s2">&quot;danningchen&quot;</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>git config --global user.name <span class="s2">&quot;danningchen&quot;</span>
 <span class="lineno">2 </span>git config --global user.email <span class="s2">&quot;danningch@gmail.com&quot;</span>
 </pre></div>
 
 <ul>
 <li><code>.gitconfig</code> is Git's configuration file, created automatically after you type in the two lines of command above</li>
 <li>Once created, you can directly edit it as text file, or use <code>git config</code> commands and tailor it towards your preference. See <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">here</a> for more configuration options.</li>
-</ul></section>
+</ul>
+<p><strong>Exercies: Set up Git with your user email locally</strong></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -2649,16 +2652,16 @@ use Bash command or command line's default editor.</p>
             
             <section><p><strong>clone</strong> is not only downloading a local copy of all the files and scripts in this repo, but also the whole "published" history associated with this repo</p>
 <p>Clone <a href="https://github.com/danningc/cli_training">cli_training</a> into Github folder (if you want centralized location for all your repos):</p>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> ~/Github
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> ~/Github
 <span class="lineno">2 </span>git clone git@github.com:civisanalytics/cli_training.git
-<span class="lineno">3 </span><span class="nb">cd </span>cli_training
+<span class="lineno">3 </span><span class="nb">cd</span> cli_training
 <span class="lineno">4 </span>ls
 <span class="lineno">5 </span>git status
 </pre></div>
 
 <p>In your local copy of the repo, you can navigate it exactly the same way as you navigate other files/directories, create and edit files.
 We are just going to learn some more Bash commands specific to Git.</p>
-<p><strong>Exercise</strong>: clone cli_training repo</p>
+<p><strong>Exercise</strong>: clone <a href="https://github.com/danningc/cli_training">cli_training</a> repo</p>
 <h3>How to create your own repo:</h3>
 <p>Follow the instruction <a href="https://help.github.com/articles/create-a-repo/">here</a>, then clone it locally.</p></section>
             
@@ -2763,14 +2766,14 @@ We are just going to learn some more Bash commands specific to Git.</p>
             
             <section><p><strong>Example Commands:</strong></p>
 <p class="notes">remind people of the three main states, modified, staged and committed</p>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>/Github/cli_training/
-<span class="lineno">2 </span>git status <span class="c"># on master</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>/Github/cli_training/
+<span class="lineno">2 </span>git status <span class="c1"># on master</span>
 <span class="lineno">3 </span>cat &gt; newfile.txt
-<span class="lineno">4 </span>git status <span class="c"># status</span>
+<span class="lineno">4 </span>git status <span class="c1"># status</span>
 <span class="lineno">5 </span>git add newfile.txt
 <span class="lineno">6 </span>git status
-<span class="lineno">7 </span>git diff <span class="c"># look for difference compared with most recent commit</span>
-<span class="lineno">8 </span>git commit -m <span class="s2">&quot;add newfile.txt&quot;</span> <span class="c"># type in commit message</span>
+<span class="lineno">7 </span>git diff <span class="c1"># look for difference compared with most recent commit</span>
+<span class="lineno">8 </span>git commit -m <span class="s2">&quot;add newfile.txt&quot;</span> <span class="c1"># type in commit message</span>
 </pre></div>
 
 <p>What if you want to edit existing file:
@@ -2810,11 +2813,11 @@ We are just going to learn some more Bash commands specific to Git.</p>
             
             
             <section><p><strong>View commit history:</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span>git log -n -5 --oneline --graph <span class="c"># look at recent commit history</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>git log -n -5 --oneline --graph <span class="c1"># look at recent commit history</span>
 </pre></div>
 
 <p><strong>Push to remote (Github):</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span>git push origin master <span class="c"># push to remote named &quot;origin&quot;</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>git push origin master <span class="c1"># push to remote named &quot;origin&quot;</span>
 </pre></div>
 
 <p><strong>Checkout out <a href="https://github.com/danningc/cli_training/commits/master">commit history</a> on Github website</strong></p>
@@ -2929,16 +2932,16 @@ We are just going to learn some more Bash commands specific to Git.</p>
             
             
             <section><h3>Example Commands:</h3>
-<div class="highlight"><pre><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>/Github/cli_training/
-<span class="lineno">2 </span>git checkout -b update-readme <span class="c"># use a meaningful branch name</span>
-<span class="lineno">3 </span>vim README.md <span class="c"># add today&#39;s date</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="nb">cd</span> <span class="nv">$HOME</span>/Github/cli_training/
+<span class="lineno">2 </span>git checkout -b update-readme <span class="c1"># use a meaningful branch name</span>
+<span class="lineno">3 </span>vim README.md <span class="c1"># add today&#39;s date</span>
 <span class="lineno">4 </span>git add README.md
 <span class="lineno">5 </span>git commit -m <span class="s2">&quot;add today&#39;s date to readme&quot;</span>
-<span class="lineno">6 </span>git push origin update-readme <span class="c"># no longer to master</span>
+<span class="lineno">6 </span>git push origin update-readme <span class="c1"># no longer to master</span>
 </pre></div>
 
 <p>While in <strong>master</strong>, the file <code>README.md</code> doesn't have today's date in its current snapshot.</p>
-<div class="highlight"><pre><span class="lineno">1 </span>git checkout master
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>git checkout master
 </pre></div>
 
 <p>Submit a <strong>Pull Request</strong> on the <a href="https://github.com/danningc/cli_training">website</a>, and tag a reviewer.</p></section>
@@ -3090,17 +3093,17 @@ We are just going to learn some more Bash commands specific to Git.</p>
             
             
             <section><p><strong>Example Commands:</strong> When you are doing non-overlapping work with your collaborator:</p>
-<div class="highlight"><pre><span class="lineno"> 1 </span>git checkout master
-<span class="lineno"> 2 </span>git checkout -b heart-glasses <span class="c"># start a new branch called heart-glasses based on master</span>
-<span class="lineno"> 3 </span>vim README.md <span class="c"># add &quot;heart-glasses&quot; there</span>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span>git checkout master
+<span class="lineno"> 2 </span>git checkout -b heart-glasses <span class="c1"># start a new branch called heart-glasses based on master</span>
+<span class="lineno"> 3 </span>vim README.md <span class="c1"># add &quot;heart-glasses&quot; there</span>
 <span class="lineno"> 4 </span>git add README.md
 <span class="lineno"> 5 </span>git commit -m <span class="s1">&#39;wear heart-glasses&#39;</span>
 <span class="lineno"> 6 </span>git push origin heart-glasses
 <span class="lineno"> 7 </span>
 <span class="lineno"> 8 </span>git checkout master
-<span class="lineno"> 9 </span>vim README.md <span class="c"># &quot;heart-glasses&quot; don&#39;t exist here</span>
-<span class="lineno">10 </span>git checkout -b cowboy-hat <span class="c"># # start a new branch called heart-glasses based on master</span>
-<span class="lineno">11 </span>touch what_do_i_wear.txt <span class="c"># add &quot;cowboy-hat&quot; there</span>
+<span class="lineno"> 9 </span>vim README.md <span class="c1"># &quot;heart-glasses&quot; don&#39;t exist here</span>
+<span class="lineno">10 </span>git checkout -b cowboy-hat <span class="c1"># # start a new branch called heart-glasses based on master</span>
+<span class="lineno">11 </span>touch what_do_i_wear.txt <span class="c1"># add &quot;cowboy-hat&quot; there</span>
 <span class="lineno">12 </span>git add what_do_i_wear.txt
 <span class="lineno">13 </span>git commit -m <span class="s1">&#39;wear cowboy-hat&#39;</span>
 <span class="lineno">14 </span>git push origin cowboy-hat
@@ -3138,12 +3141,12 @@ We are just going to learn some more Bash commands specific to Git.</p>
             
             <section><p><strong>Example Commands:</strong> When others introduce changes that affect your work to <code>master</code>,
 you want to incorporate them while still working on your branch</p>
-<div class="highlight"><pre><span class="lineno"> 1 </span><span class="c"># sync your master with remote if it&#39;s not</span>
-<span class="lineno"> 2 </span>git fetch origin <span class="c"># download objects and refs from another repository</span>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># sync your master with remote if it&#39;s not</span>
+<span class="lineno"> 2 </span>git fetch origin <span class="c1"># download objects and refs from another repository</span>
 <span class="lineno"> 3 </span>git checkout master
 <span class="lineno"> 4 </span>git merge origin/master
 <span class="lineno"> 5 </span>
-<span class="lineno"> 6 </span><span class="c"># similarly, you can do that with branches</span>
+<span class="lineno"> 6 </span><span class="c1"># similarly, you can do that with branches</span>
 <span class="lineno"> 7 </span>git checkout heart-glasses
 <span class="lineno"> 8 </span>git merge master
 <span class="lineno"> 9 </span>
@@ -3222,22 +3225,22 @@ you want to incorporate them while still working on your branch</p>
             
             
             <section><p><strong>Command Examples:</strong> when you are editing the same line of code as your collaborator</p>
-<div class="highlight"><pre><span class="lineno">1 </span>  git checkout master
-<span class="lineno">2 </span>  vim what_do_i_wear.txt <span class="c">#edit line 2 to &quot;heart glasses&quot;</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>  git checkout master
+<span class="lineno">2 </span>  vim what_do_i_wear.txt <span class="c1">#edit line 2 to &quot;heart glasses&quot;</span>
 <span class="lineno">3 </span>  git add what_do_i_wear.txt
 <span class="lineno">4 </span>  git commit -m <span class="s1">&#39;wear heart glasses&#39;</span>
-<span class="lineno">5 </span>  git checkout master <span class="c"># go back to master</span>
+<span class="lineno">5 </span>  git checkout master <span class="c1"># go back to master</span>
 </pre></div>
 
 <p>Another person create a branch based on <strong>master</strong>, called <strong>cowboy-hat</strong></p>
-<div class="highlight"><pre><span class="lineno">1 </span>  git checkout -b cowboy-hat
-<span class="lineno">2 </span>  vim what_do_i_wear.txt <span class="c">#edit line 2 to &quot;cowboy hat&quot;</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>  git checkout -b cowboy-hat
+<span class="lineno">2 </span>  vim what_do_i_wear.txt <span class="c1">#edit line 2 to &quot;cowboy hat&quot;</span>
 <span class="lineno">3 </span>  git add what_do_i_wear.txt
 <span class="lineno">4 </span>  git commit -m <span class="s1">&#39;wear cowboy hat&#39;</span>
 </pre></div>
 
 <p>What happens if you want to merge these two branches together?</p>
-<div class="highlight"><pre><span class="lineno">1 </span>  git merge heart-glasses <span class="c"># merge heart-glasses onto this branch</span>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>  git merge heart-glasses <span class="c1"># merge heart-glasses onto this branch</span>
 </pre></div>
 </section>
             
@@ -3308,7 +3311,7 @@ you want to incorporate them while still working on your branch</p>
 <li>Add as a new commit shows you resolve the conflict</li>
 </ul>
 <p class="notes"></p>
-<div class="highlight"><pre><span class="lineno">1 </span>vim what_do_i_wear.txt
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>vim what_do_i_wear.txt
 <span class="lineno">2 </span>git add what_do_i_wear.txt
 <span class="lineno">3 </span>git commit -m <span class="s1">&#39;wear the right thing&#39;</span>
 </pre></div>

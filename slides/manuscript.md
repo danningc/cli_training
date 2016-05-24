@@ -20,7 +20,7 @@
 
 Email [me](dchen@civisanalytics.com)
 
-**Everything can be found in Github**
+**Everything can be found in**
 [Github Repo: danning/cli_training](https://github.com/danningc/cli_training)
 (Please file issues if you find any)
 
@@ -35,6 +35,7 @@ Email [me](dchen@civisanalytics.com)
 
   * Get familiar with your Terminal program
   * Use Bash commands to navigate your file system
+  * Get a sense of permissioning
   * Set up .bashrc and understand environment variables
 
 .notes: In this module, all the actions will happen in a terminal. You can choose between Mac's default terminal "Terminal" or "iTerm" if that is installed on your machine. If you are using windows, find cygwin. Both applications provide similar functionality interfacing the operating systems. My personal preference is iTerm because it's highly configurable, open-sourced and being actively developed by the community.
@@ -62,7 +63,7 @@ Email [me](dchen@civisanalytics.com)
 **On a UNIX system, everything is a file; if something is not a file, it is a process**
 
   * `pwd` (print working directory): prints what directory you are in
-  * `cd` (change directory): move around
+  * `cd` (change directory): moves you around
   * `ls` (list): prints objects (files and/or subdirectories)
 
 ---
@@ -85,28 +86,28 @@ Email [me](dchen@civisanalytics.com)
 ---
 # Hot Keys with Terminals
 
+  * Auto-complete:
+    * `Tab`: auto-complete command as you start typing the first couple of letters
   * Clear screen:
-    * iTerm: `Cmd + R`
+    * iTerm: `Ctrl + L` or `Cmd + R`
     * Terminal: `Ctrl + L` or `Cmd + L`
   * Kill running process:
     * `Ctrl + Z`: suspend the current foreground job (`bg` to make the command to execute in background)
     * `Ctrl + C`: interrupt the current running program
-  * Auto-complete:
-    * `Tab`: auto-complete command as you start typing the first couple of letters
 
 ---
 # Using Bash to Interact with File System
 You can move files around using bash, creating and deleting files and directories (folders)
 
 * `touch`: create a new and empty file
-* `mkdir`: (make directory)
+* `mkdir`: (make directory) create a new directory
 * `cp`: (copy) file or directory
 * `mv`: (move) or rename file or directory
 * `rm` (remove) file or directory
 
 `-r`: if the target is a directory, for example:
 
-* `cp -r directory/`: copy the whole targeted directory
+* `cp -r directory/ ~/Desktop/directory`: copy the whole targeted directory to the destination
 
 ---
 # Using Bash to Interact with File System
@@ -114,7 +115,7 @@ You can move files around using bash, creating and deleting files and directorie
 **Exercise**
 
     !bash
-    cd $HOME
+    cd ~
     touch newfile.txt # create an empty file
     mkdir directory # create an empty directory in home directory
     cp newfile.txt directory/newfile.txt # copy newfile to directory
@@ -150,7 +151,7 @@ use Bash command or command line's default editor.
 
 ### Approach 3: use Bash's default editor
     !bash
-    vim newfile.txt # vim create a new file if it doesn't exist
+    vim newfile.txt # vim creates a new file if it doesn't exist
 
 ---
 # Create New File in Command Line
@@ -207,6 +208,7 @@ Remember the "newfile.txt" you just created:
 
     !bash
     man ls # display manual
+    man --help
 
 ---
 # Permissions and Sudo
@@ -358,6 +360,8 @@ Quick peak:
 * `.gitconfig` is Git's configuration file, created automatically after you type in the two lines of command above
 * Once created, you can directly edit it as text file, or use `git config` commands and tailor it towards your preference. See [here](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more configuration options.
 
+**Exercies: Set up Git with your user email locally**
+
 ---
 ## Authorize Local Git with Github using SSH
 
@@ -386,7 +390,7 @@ Clone [cli_training](https://github.com/danningc/cli_training) into Github folde
 In your local copy of the repo, you can navigate it exactly the same way as you navigate other files/directories, create and edit files.
 We are just going to learn some more Bash commands specific to Git.
 
-**Exercise**: clone cli_training repo
+**Exercise**: clone [cli_training](https://github.com/danningc/cli_training) repo
 
 ### How to create your own repo:
 Follow the instruction [here](https://help.github.com/articles/create-a-repo/), then clone it locally.
