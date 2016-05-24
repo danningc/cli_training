@@ -463,6 +463,8 @@ In this way, you are basically using Github as Dropbox, but with the capability 
 ## Workflow B: Branch and Merge to Master
 ### Branching, Merging and Pull Requests
 
+[How to become a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
+
   * **Branch** in Git means a "pointer" to a history of commits
     * Usually associate this series of commits with one topic or theme
   * Why **master** matters to people?
@@ -687,7 +689,11 @@ To prevent committing unwanted files, create a .gitignore file in your repo. For
   * Meaningful commit message/branch names help yourself and others understand what's been done
 
 ---
-# For your efficiency:
+## Exercise: make a pull request to danningc/cli_training and tag @danningc for review
+
+Before that, you will need to tell me your account so i can add you as a collaborator.
+
+## For your efficiency:
 
 * Set up [Git auto-completion](https://gist.github.com/ivanoats/1823034)
 * Learn [how to undo changes at different stages](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
